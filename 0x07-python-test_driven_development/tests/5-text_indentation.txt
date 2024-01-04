@@ -1,0 +1,23 @@
+# Introduction
+
+You will find here documentation of the 5-text_indentation Python module.
+
+## Using `text_indentation()`
+You can use the `text_indentation()` function in the following way:
+First, let's import the functions:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. You? Know: Yes")
+Hello.
+<BLANKLINE>
+You?
+<BLANKLINE>
+Know:
+<BLANKLINE>
+Yes
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(20)
+Traceback (most recent call last):
+TypeError: text must be a string

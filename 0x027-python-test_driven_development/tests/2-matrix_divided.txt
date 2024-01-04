@@ -1,0 +1,48 @@
+# Introduction
+
+You will find here documentation of the 2-matrix_divided Python module.
+
+## Using `matrix_divided()`
+You can use the `matrix_divided()` function in the following way:
+First, let's import the functions:
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix = [[1, 2, 3]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0]]
+>>> matrix = [[1, 2, 3], [1, "String", 3]]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = []
+>>> print(matrix_divided(matrix, 3))
+[]
+>>> matrix = [1, 2]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix_divided())
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+>>> print(matrix_divided(2))
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> matrix = [[1, 2, 3]]
+>>> print(matrix_divided(matrix, "2"))
+Traceback (most recent call last):
+TypeError: div must be a number
+>>> matrix = [[1, 2, 3], "String"]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+>>> matrix = [[1, 2, 3], [1, 2]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
