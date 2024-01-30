@@ -41,7 +41,7 @@ def is_safe(board, row, col):
 def solve_nqueens(board, col, solutions):
     # If all queens are placed, add the solution
     if col == N:
-        solutions.append([i.index(1) for i in board])
+        solutions.append([[i, board[i].index(1)] for i in range(N)])
         return
     # Try all rows in the current column
     for i in range(N):
@@ -52,6 +52,7 @@ def solve_nqueens(board, col, solutions):
             solve_nqueens(board, col + 1, solutions)
             # Backtrack and remove the queen
             board[i][col] = 0
+    return
 
 # Create an empty board
 board = [[0 for i in range(N)] for j in range(N)]
