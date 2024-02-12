@@ -4,10 +4,17 @@ Module defines a function which adds attributes to obj
 """
 
 
-def add_attribute(attr, obj, value):
+def add_attribute(obj, name, value):
     """
-    function that adds a new attribute to an object
+    Check if the object has a __dict__
+         attribute that stores its attributes
     """
-    if not hasattr("__dict__", obj):
+    if not hasattr(obj, "__dict__"):
+    """
+    Raise a TypeError exception with the message
+    """
         raise TypeError("can't add new attribute")
-    setattr(attr, attr, value)
+    """
+    Set the new attribute using setattr
+    """
+    setattr(obj, name, value)
