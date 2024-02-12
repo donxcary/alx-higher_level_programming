@@ -4,7 +4,7 @@ Module defines a function which adds attributes to obj
 """
 
 
-def add_attribute(obj, name, value):
+def add_attribute(obj, attr, value):
     """
     Check if the object has a __dict__
          attribute that stores its attributes
@@ -17,4 +17,4 @@ def add_attribute(obj, name, value):
     """
     Set the new attribute using setattr
     """
-    setattr(obj, name, value)
+    setattr(obj, attr, value)
