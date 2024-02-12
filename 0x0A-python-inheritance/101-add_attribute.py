@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 """
-Module
-Please refer to the documentation in the README.md
+Module defines a function which adds attributes to obj
 """
 
 
-def add_attribute(clss, attr, value):
+def add_attribute(attr, obj, value):
     """
     function that adds a new attribute to an object
     """
-    if str(type(clss)).split(".")[0] == "<class '__main__":
-        setattr(clss, attr, value)
-    else:
+    if not hasattr("__dict__", obj):
         raise TypeError("can't add new attribute")
+    setattr(attr, attr, value)
